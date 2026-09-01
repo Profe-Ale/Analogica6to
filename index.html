@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Qué componente soy?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+
+    <section id="pantallaInicio" class="pantalla activa">
+      <h1>¿Qué componente soy?</h1>
+
+      <div class="panel">
+        <h2>Crear sala</h2>
+        <input type="text" id="nombreCreador" placeholder="Tu nombre" maxlength="20">
+        <button id="btnCrearSala">Crear sala</button>
+      </div>
+
+      <div class="panel">
+        <h2>Unirse a una sala</h2>
+        <input type="text" id="nombreJugador" placeholder="Tu nombre" maxlength="20">
+        <input type="text" id="codigoSalaInput" placeholder="Código de sala" maxlength="6">
+        <button id="btnUnirse">Unirse</button>
+      </div>
+    </section>
+
+    <section id="pantallaLobby" class="pantalla">
+      <h1>Sala de espera</h1>
+
+      <div class="panel">
+        <p>Código de sala</p>
+        <div id="codigoSala" class="codigo-sala">-----</div>
+        <button id="btnCopiarCodigo">Copiar código</button>
+      </div>
+
+      <div class="panel">
+        <h2>Componentes electrónicos</h2>
+        <p class="ayuda">La partida se juega únicamente con componentes electrónicos.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Jugadores</h2>
+        <div id="listaJugadores"></div>
+      </div>
+
+      <div class="panel">
+        <p id="contadorJugadores">Jugadores: 0</p>
+        <button id="btnIniciarPartida">Iniciar partida</button>
+      </div>
+    </section>
+
+    <section id="pantallaJuego" class="pantalla">
+      <h1>¿Qué componente soy?</h1>
+
+      <!-- TURNO -->
+      <div class="panel panel-turno">
+        <p>Turno actual</p>
+
+        <div id="contadorRonda" class="contador-ronda">
+          Ronda 1 de 5
+        </div>
+
+        <div id="turnoActual" class="turno-actual">
+          Esperando...
+        </div>
+
+        <div id="palabraTurno" class="palabra-turno">
+          ???
+        </div>
+
+        <p id="mensajeTurno" class="ayuda"></p>
+
+        <button id="btnTerminarTurno" style="display: none;">
+          ✅ Terminé mi turno
+        </button>
+
+        <button id="btnForzarTurno" style="display: none;">
+          ⏭ Forzar siguiente turno
+        </button>
+      </div>
+
+      <!-- AYUDA -->
+      <div class="panel ayuda-preguntas-panel">
+        <h2>¿No se te ocurre qué preguntar?</h2>
+        <p class="ayuda">Elegí un nivel y vas a ver varias preguntas posibles.</p>
+
+        <div class="botones-ayuda">
+          <button id="btnPreguntaFacil" class="btn-ayuda">🟢 Preguntas fáciles</button>
+          <button id="btnPreguntaIntermedia" class="btn-ayuda">🟡 Preguntas intermedias</button>
+          <button id="btnPreguntaTecnica" class="btn-ayuda">🔴 Preguntas técnicas</button>
+        </div>
+      </div>
+
+      <!-- GRILLA -->
+      <h2>Componentes posibles</h2>
+      <p class="ayuda">Tocá un componente para descartarlo.</p>
+
+      <div id="grillaNumeros" class="grilla"></div>
+
+      <!-- CONTROLES -->
+      <div class="panel controles-finales">
+        <button id="btnRevelar">Revelar todos</button>
+        <button id="btnNuevaPartida">Nueva partida</button>
+        <button id="btnVolverSala" style="display: none;">Volver a sala de espera</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VENTANA DE AYUDA -->
+  <div id="modalPreguntas" class="modal-preguntas" aria-hidden="true">
+    <div class="modal-preguntas-contenido" role="dialog" aria-modal="true" aria-labelledby="tituloModalPreguntas">
+      <button id="btnCerrarPreguntas" class="cerrar-modal" aria-label="Cerrar ayuda">×</button>
+
+      <h2 id="tituloModalPreguntas">Preguntas de ayuda</h2>
+      <p id="descripcionModalPreguntas" class="ayuda"></p>
+
+      <div id="listaPreguntasAyuda" class="lista-preguntas-ayuda"></div>
+
+      <div class="acciones-modal">
+        <button id="btnOtrasPreguntas">Ver otras preguntas</button>
+        <button id="btnCerrarPreguntasAbajo">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
