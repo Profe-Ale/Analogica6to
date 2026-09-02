@@ -12,6 +12,13 @@
     <section id="pantallaInicio" class="pantalla activa">
       <h1>¿Qué componente soy?</h1>
 
+      <div id="panelReconexion" class="panel panel-reconexion" style="display: none;">
+        <h2>Volver a tu partida</h2>
+        <p id="textoReconexion" class="ayuda"></p>
+        <button id="btnReconectar">Reconectarme</button>
+        <button id="btnOlvidarSesion">Olvidar sesión</button>
+      </div>
+
       <div class="panel">
         <h2>Crear sala</h2>
         <input type="text" id="nombreCreador" placeholder="Tu nombre" maxlength="20">
@@ -59,7 +66,7 @@
         <p>Turno actual</p>
 
         <div id="contadorRonda" class="contador-ronda">
-          Ronda 1 de 5
+          Ronda 1 de 7
         </div>
 
         <div id="turnoActual" class="turno-actual">
@@ -129,3 +136,4 @@
   <script type="module" src="script.js"></script>
 </body>
 </html>
+
